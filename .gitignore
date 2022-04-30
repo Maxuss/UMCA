@@ -1,1 +1,4 @@
 .idea
+/common/.gradle/
+/client/.gradle
+/server/.gradle
