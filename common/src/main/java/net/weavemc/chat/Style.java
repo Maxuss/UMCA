@@ -12,32 +12,32 @@ public class Style implements Cloneable {
     @Getter @NotNull
     private final HashMap<Formatting, Boolean> formattings = new HashMap<>();
 
-    public static Style EMPTY = new Style();
+    public static @NotNull Style EMPTY = new Style();
 
     private Style() {
 
     }
 
-    public Style stripColor() {
+    public @NotNull Style stripColor() {
         Style clone = this.clone();
         clone.color = null;
         return clone;
     }
 
-    public Style stripFormattings() {
+    public @NotNull Style stripFormattings() {
         Style clone = this.clone();
         clone.formattings.clear();
         return clone;
     }
 
-    public Style strip() {
+    public @NotNull Style strip() {
         Style clone = this.clone();
         clone.color = null;
         clone.formattings.clear();
         return clone;
     }
 
-    public Style colored(TextColor color) {
+    public @NotNull Style colored(TextColor color) {
         Style clone = this.clone();
         clone.color = color;
         return clone;
@@ -47,7 +47,7 @@ public class Style implements Cloneable {
         return this.formatted(formatting, true);
     }
 
-    public Style formatted(Formatting formatting, boolean flag) {
+    public @NotNull Style formatted(Formatting formatting, boolean flag) {
         Style clone = this.clone();
         clone.formattings.put(formatting, flag);
         return clone;

@@ -1,11 +1,12 @@
 package net.weavemc.chat;
 
 import net.weavemc.utils.Triple;
+import org.jetbrains.annotations.NotNull;
 
 public interface TextColor {
     int value();
 
-    default Triple<Integer, Integer, Integer> rgb() {
+    default @NotNull Triple<Integer, Integer, Integer> rgb() {
         int value = value();
         int r = (value >> 16) & 0xFF;
         int g = (value >> 8) & 0xFF;
@@ -13,7 +14,7 @@ public interface TextColor {
         return new Triple<>(r, g, b);
     }
 
-    default String legacy() {
+    default @NotNull String legacy() {
         return ChatUtil.LEGACY_FORMAT_STR + 'x' + asString().substring(1);
     }
 

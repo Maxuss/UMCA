@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;
@@ -27,15 +28,15 @@ public class Pos implements Cloneable {
     @Setter
     private double pitch;
 
-    public Pos(World world, int x, int y, int z) {
+    public Pos(@NotNull World world, int x, int y, int z) {
         this(world, (double) x, y, z);
     }
 
-    public Pos(World world, float x, float y, float z) {
+    public Pos(@NotNull World world, float x, float y, float z) {
         this(world, (double) x, y, z);
     }
 
-    public Pos(World world, double x, double y, double z) {
+    public Pos(@NotNull World world, double x, double y, double z) {
         this(world, x, y, z, .0, .0);
     }
 

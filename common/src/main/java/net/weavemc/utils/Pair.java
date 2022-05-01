@@ -1,10 +1,12 @@
 package net.weavemc.utils;
 
 import com.google.common.base.Objects;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public record Pair<F, S>(F first, S second) implements Cloneable {
     @Override
-    public String toString() {
+    public @NotNull String toString() {
         return "Pair{" +
                 "first=" + first +
                 ", second=" + second +
@@ -22,7 +24,7 @@ public record Pair<F, S>(F first, S second) implements Cloneable {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(@Nullable Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Pair<?, ?> pair = (Pair<?, ?>) o;

@@ -1,12 +1,14 @@
 package net.weavemc.chat;
 
 import com.google.common.base.Objects;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 abstract class BaseMessage implements Message, Cloneable {
     protected Style style = Style.EMPTY;
 
     @Override
-    public Message style(Style style) {
+    public @NotNull Message style(Style style) {
         BaseMessage clone = (BaseMessage) this.clone();
         clone.style = style;
         return clone;
@@ -18,12 +20,12 @@ abstract class BaseMessage implements Message, Cloneable {
     }
 
     @Override
-    public String toString() {
+    public @NotNull String toString() {
         return this.getClass().getSimpleName() + "('" + getString() + "')";
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(@Nullable Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BaseMessage that = (BaseMessage) o;

@@ -1,5 +1,7 @@
 package net.weavemc.chat;
 
+import org.jetbrains.annotations.NotNull;
+
 public enum NamedColor implements TextColor {
     DARK_RED('r', 0xAA0000),
     RED('c', 0xFF5555),
@@ -32,12 +34,12 @@ public enum NamedColor implements TextColor {
     }
 
     @Override
-    public String asString() {
+    public @NotNull String asString() {
         return name().toLowerCase();
     }
 
     @Override
-    public String legacy() {
+    public @NotNull String legacy() {
         return ChatUtil.LEGACY_FORMAT_STR + legacy;
     }
 }

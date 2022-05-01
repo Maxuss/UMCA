@@ -1,5 +1,7 @@
 package net.weavemc.chat;
 
+import org.jetbrains.annotations.NotNull;
+
 public enum Formatting {
     OBFUSCATED('k'),
     BOLD('l'),
@@ -15,11 +17,11 @@ public enum Formatting {
         this.formatChar = format;
     }
 
-    public String legacy() {
+    public @NotNull String legacy() {
         return ChatUtil.LEGACY_FORMAT_STR + formatChar;
     }
 
-    public String asString() {
+    public @NotNull String asString() {
         return name().toLowerCase();
     }
 }

@@ -1,10 +1,12 @@
 package net.weavemc.utils;
 
 import com.google.common.base.Objects;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public record Triple<A, B, C>(A first, B second, C third) implements Cloneable {
     @Override
-    public String toString() {
+    public @NotNull String toString() {
         return "Triple{" +
                 "first=" + first +
                 ", second=" + second +
@@ -23,7 +25,7 @@ public record Triple<A, B, C>(A first, B second, C third) implements Cloneable {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(@Nullable Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Triple<?, ?, ?> triple = (Triple<?, ?, ?>) o;

@@ -80,11 +80,11 @@ public class Vec implements Cloneable {
         return this;
     }
 
-    public double distance(Vec other) {
+    public double distance(@NotNull Vec other) {
         return Math.sqrt(MathUtil.square(x - other.x) + MathUtil.square(y - other.y) + MathUtil.square(y - other.y));
     }
 
-    public double distanceSquared(Vec other) {
+    public double distanceSquared(@NotNull Vec other) {
         return MathUtil.square(x - other.x) + MathUtil.square(y - other.y) + MathUtil.square(y - other.y);
     }
 
