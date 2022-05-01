@@ -2,7 +2,7 @@ package net.weavemc;
 
 import lombok.Getter;
 
-public class Commons {
+public class Weave {
     @Getter
     private static String backendName;
     @Getter
@@ -13,9 +13,9 @@ public class Commons {
     private static Backend backend;
 
     public void setBackend(Backend backend) {
-        Commons.backend = backend;
-        Commons.backendName = backend.getName();
-        Commons.version = backend.getApiVersion();
-        Commons.minecraftVersion = backend.getMinecraftVersion();
+        Weave.backend = backend;
+        Weave.backendName = backend.getName();
+        Weave.version = backend.getApiVersion();
+        Weave.minecraftVersion = backend.getMinecraftVersion();
     }
 }

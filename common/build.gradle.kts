@@ -8,7 +8,6 @@ version = "1.0-SNAPSHOT"
 repositories {
     mavenCentral()
 
-    //maven { url = uri("https://hub.spigotmc.org/nexus/content/repositories/public/") }
 }
 
 dependencies {
@@ -20,8 +19,7 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.2")
 
     implementation("com.google.guava:guava:31.1-jre")
-
-    //implementation("org.spigotmc:spigot-api:1.18.2-R0.1-SNAPSHOT")
+    implementation("com.google.code.gson:gson:2.9.0")
 }
 
 tasks.getByName<Test>("test") {
