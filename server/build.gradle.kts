@@ -2,7 +2,7 @@ plugins {
     id("java")
 }
 
-group = "net.umcapowered"
+group = "net.weavemc"
 version = "1.0-SNAPSHOT"
 
 repositories {

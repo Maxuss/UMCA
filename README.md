@@ -1,1 +1,2 @@
-# Universal Minecraft API (UMcA)
+# Weave
+## Multiplatform Minecraft API
