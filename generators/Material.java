@@ -7,7 +7,6 @@ import net.weavemc.utils.Key;
 /**
     This class was auto-generated
 **/
-@SuppressWarnings("ALL")
 public class Material {
     @Getter
     private final Key resourceKey;
@@ -36,7 +35,7 @@ public class Material {
         this.legacyId = legacyId;
     }
     
-    public static final Material AIR = new Material(Key.minecraft("air"), "air", "Air", (byte) 0, (short) -1);
+    public static final Material AIR = new Material(Key.minecraft("air"), "", (byte) 0, (short) -1);
     public static final Material STONE = new Material(Key.minecraft("stone"), "stone", "Stone", (byte) 64, (short) 1);
     public static final Material GRANITE = new Material(Key.minecraft("granite"), "granite", "Granite", (byte) 64, (short) 2);
     public static final Material POLISHED_GRANITE = new Material(Key.minecraft("polished_granite"), "polished_granite", "Polished Granite", (byte) 64, (short) 3);

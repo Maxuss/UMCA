@@ -7,6 +7,5 @@ import java.util.List;
 public class Item {
 
     void appendTooltip(List<Message> tooltip) {
-
     }
 }

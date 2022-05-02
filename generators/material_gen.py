@@ -1,6 +1,8 @@
 import json
+from net import get_json
 
-def generator():
+
+def gen_material_class():
     base = """
 package net.weavemc.item;
 
@@ -37,15 +39,27 @@ public class Material {
         this.displayName = displayName;
         this.legacyId = legacyId;
     }
-
+    
+    public static final Material AIR = new Material(Key.minecraft("air"), "", (byte) 0, (short) -1);
 """
-    j = json.load(open("items.json"))
+    j = get_json("items.json")
     for each in j:
         base += f"""    public static final Material {each["name"].upper()} = new Material(Key.minecraft("{each["name"]}"), "{each["name"]}", "{each["displayName"]}", (byte) {each["stackSize"]}, (short) {each["id"]});\n"""
-
+    base += _build_lookup_tables(j)
     base += "\n}"
     f = open("Material.java", "w+")
     f.write(base)
 
-if __name__ == "__main__":
-    generator()
+
+def _build_lookup_tables(j) -> str:
+    base = """    
+    public static Material find(String name) {
+        switch(name.toLowerCase()) {
+    """
+    for each in j:
+        base += f"""            case "{each["name"].lower()}": return Material.{each["name"].upper()};\n"""
+    base += """            default: return Material.AIR;
+        }
+    }
+    """
+    return base
